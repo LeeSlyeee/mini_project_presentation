@@ -12,7 +12,7 @@
         :root {
             --primary-color: #2c3e50;
             --accent-color: #c0392b;
-            --bg-color: #f4f6f8;
+            --bg-color: #F2F7FF;
             --text-color: #333;
             --box-bg: #fff;
             --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -141,15 +141,16 @@
 
         th,
         td {
-            padding: 15px;
+            padding: 20px;
             text-align: center;
             border-bottom: 1px solid #eee;
-            font-size: 1.1em;
+            font-size: 1.2em;
         }
 
         th {
             background: var(--primary-color);
             color: #fff;
+            padding: 20px;
         }
 
         .highlight {
@@ -206,8 +207,8 @@
         }
 
         .btn-nav {
-            background-color: var(--primary-color);
-            color: white;
+            background-color: #f4f6f8;
+            color: #34495e;
             border: none;
             width: 50px;
             height: 50px;
@@ -218,15 +219,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn-nav:hover {
-            background-color: #34495e;
         }
 
         .btn-nav:disabled {
-            background-color: #ccc;
+            background-color: #f4f6f8;
+            color: #cacacaff;
             cursor: not-allowed;
         }
 
@@ -318,14 +315,19 @@
 
     <div class="slide-container">
         <div class="slide active">
-            <h1 style="text-align: center">강원도 토박이 길동이의<br/>서울 거주지 찾기</h1>
-            <p style="font-size: 1.5em; margin-bottom: 50px; color: #666;">
-                실거래가·생활 인프라·뉴스 데이터를 활용한 거주지 추천 분석
-            </p>
-            <div class="list-box" style="display: inline-block; padding: 30px 50px;">
-                <p style="margin: 0; text-align: center;"><strong>발표자:</strong> 이성희</p>
-                <p style="margin: 10px 0 0 0; text-align: center;"><strong>조원:</strong> 전진우, 정가연, 정진규</p>
-                <p style="margin: 10px 0 0 0; text-align: center;"><strong>발표일:</strong> 2025.12.17(수)</p>
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <div style="display: flex; flex-direction: column; justify-content: center; padding-left: 12px;">
+                    <h1 style="text-align: left;">강원도 토박이 길동이의<br/>서울 거주지 찾기</h1>
+                    <p style="font-size: 1.5em; margin: 0; color: #666; text-align: left; margin-bottom: 70px;">
+                    생활 인프라·뉴스 데이터를 활용한 추천 분석
+                    </p>
+                </div>
+            <img src="./static/gildong_house.png" alt="" width="330" >
+            </div>
+            <div class="list-box" style="display: inline-block; padding: 30px 120px;">
+                <p style="margin: 0; text-align: center;"><strong>발표자:</strong> 정가연</p>
+                <p style="margin: 10px 0 0 0; text-align: center;"><strong>조원:</strong> 이성희, 전진우, 정진규</p>
+                <p style="margin: 10px 0 0 0; text-align: center;"><strong>발표일:</strong> 2025.12.22(월)</p>
             </div>
         </div>
 
@@ -333,40 +335,122 @@
             <h2>조원 소개 및 업무 분장</h2>
             <div class="container row" style="flex-direction: row">
                 <table>
-                    <tr><th>이성희(조장)<br/><b>Project Manager</b></th><td>부동산 데이터 수집(웹 크롤링) 및 분석 / 발표자료 제작(Flask)</td></tr>
+                    <tr><th>이성희(조장)<br/><b>Project Manager</b></th><td>부동산 데이터 수집(웹 크롤링) 및 분석 / 발표자료 제작(Flask) 및 기획 발표</td></tr>
                     <tr><th>전진우<br/><b>Project Leader</b></th><td>부동산 데이터 수집(웹 크롤링) 및 분석 / 데이터 취합하여 정밀 분석</td></tr>
-                    <tr><th>정가연</th><td>부동산 데이터 수집(공공 데이터) 및 분석 / 공공데이터 정제 및 분석 / 발표자료 제작(Flask)</td></tr>
+                    <tr><th>정가연</th><td>부동산 데이터 수집(공공 데이터) 및 분석 / 공공데이터 정제 및 분석 / 발표자료 제작(Flask) 및 최종 발표</td></tr>
                     <tr><th>정진규</th><td>부동산 데이터 수집(공공 데이터) 및 분석 / 공공데이터 정제 및 분석</td></tr>
                 </table>
             </div>
         </div>
 
         <div class="slide">
-            <h2>1. 문제 정의 & 분석 목적</h2>
-            <p>대상자 : 고길동(강원도, 40세)</p>
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <img src="./static/gildong.png" alt="" width="160" >
+
+                <div style="display: flex; flex-direction: column; justify-content: center; padding-left: 30px;">
+                    <h2 style="margin: 0 0 8px 0;">1. 문제 정의 & 분석 목적</h2>
+                    <p style="margin: 0;">대상자 : 고길동(강원도, 40세)</p>
+                </div>
+            </div>
             <div class="container row" style="flex-direction: row">
                 <div class="col list-box">
                     <h3>목적</h3>
                     <p>서울 내 실거주</p>
                     <p>예산 10억 원 이하</p>
                     <p>단순 가격이 아닌 거래 안정성 + 생활 인프라 + 미래 가치 고려</p>
-                    <!-- <p class="highlight" style="text-align: left;">{{ data.analysis_summary.volume }}</p>
-                    <div class="clickable-image-area" onclick="openModal('./static/transaction_trend.png')">
-                        <img src="./static/transaction_trend.png" alt="">
-                    </div> -->
                 </div>
                 <div class="col list-box">
-                    <h3>사용 데이터</h3>
-                    <p>내부 : 서울시 부동산 실거래가(2022~2025)</p>
-                    <p>외부 : 병원, 대형마트, 지하철</p>
-                    <p>뉴스 크롤링 : 치안, 재개발/재건축 이슈</p>
-                    <!-- <p class="highlight" style="text-align: left;">{{ data.analysis_summary.price_change }}</p>
-                    <div class="clickable-image-area" onclick="openModal('./static/price_trend.png')">
-                        <img src="./static/price_trend.png" alt="">
-                    </div> -->
+                    <h3>문제의식</h3>
+                    <p>강남·마용성은 인지상 우수하나 가격 장벽 존재</p>
+                    <p>“완성된 인프라”보다 “완성 단계 진입 지역” 탐색 필요</p>
                 </div>
             </div>
         </div>
+
+
+        <div class="slide" style="">
+            <h2>1. 문제 정의 & 분석 목적</h2>
+            <!--- <div class="budget-badge">예산: 10억원 미만</div> -->
+            <p>🔑 핵심 컨셉 : “서울 입성의 첫 단계로 합리적인 선택”</p>
+            <div style="display: flex;">
+                <div class="container" style="padding: 16px;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th width="100%">목적</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>서울 내 실거주 </strong></td>
+                            </tr>
+                            <tr>
+                            <td><strong>예산 10억 원 이하</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="container" style="padding: 16px;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th width="100%">목적</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>서울 내 실거주 </strong></td>
+                            </tr>
+                            <tr>
+                            <td><strong>예산 10억 원 이하</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="slide">
+            <h2>고길동의 의사결정 프레임</h2>
+            <!--- <div class="budget-badge">예산: 10억원 미만</div> -->
+            <div class="container">
+                <p>🔑 핵심 컨셉 : “서울 입성의 첫 단계로 합리적인 선택”</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th width="50%">기준</th>
+                            <th width="50%">의미</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>예산 접근성</strong></td>
+                            <td><strong>10억 원 이하 거래 가능</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>거래량</strong></td>
+                            <td><strong>수요가 먼저 반응하는 지역</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>가격 수준</strong></td>
+                            <td><strong>급등 전, 아직 과열되지 않음</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>인프라</strong></td>
+                            <td><strong>이미 최소 기준 충족</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>성장성</strong></td>
+                            <td><strong>재개발 · 교통 · 생활 인프라 확장</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
 
 
         <div class="slide">
