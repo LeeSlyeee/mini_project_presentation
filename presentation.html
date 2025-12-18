@@ -318,9 +318,9 @@
 
     <div class="slide-container">
         <div class="slide active">
-            <h1 style="text-align: center">강원도 토박이 길동이의<br/>서울 거주지 찾기 기획 발표</h1>
+            <h1 style="text-align: center">강원도 토박이 길동이의<br/>서울 거주지 찾기</h1>
             <p style="font-size: 1.5em; margin-bottom: 50px; color: #666;">
-                데이터 기반 의사결정 과정 기획 발표
+                실거래가·생활 인프라·뉴스 데이터를 활용한 거주지 추천 분석
             </p>
             <div class="list-box" style="display: inline-block; padding: 30px 50px;">
                 <p style="margin: 0; text-align: center;"><strong>발표자:</strong> 이성희</p>
@@ -333,31 +333,64 @@
             <h2>조원 소개 및 업무 분장</h2>
             <div class="container row" style="flex-direction: row">
                 <table>
-                    <tr><th>이성희(조장)</th><td><b>Project Manager)</b> 부동산 데이터 수집(웹 크롤링) 및 분석 /발표자료 제작(Flask)</td></tr>
-                    <tr><th>전진우</th><td><b>Project Leader)</b> 부동산 데이터 수집(웹 크롤링) 및 분석 / 데이터 취합하여 정밀 분석</td></tr>
-                    <tr><th>정가연</th><td>부동산 데이터 수집(공공 데이터) 및 분석 / 공공데이터 정제 및 분석</td></tr>
+                    <tr><th>이성희(조장)<br/><b>Project Manager</b></th><td>부동산 데이터 수집(웹 크롤링) 및 분석 / 발표자료 제작(Flask)</td></tr>
+                    <tr><th>전진우<br/><b>Project Leader</b></th><td>부동산 데이터 수집(웹 크롤링) 및 분석 / 데이터 취합하여 정밀 분석</td></tr>
+                    <tr><th>정가연</th><td>부동산 데이터 수집(공공 데이터) 및 분석 / 공공데이터 정제 및 분석 / 발표자료 제작(Flask)</td></tr>
                     <tr><th>정진규</th><td>부동산 데이터 수집(공공 데이터) 및 분석 / 공공데이터 정제 및 분석</td></tr>
                 </table>
             </div>
         </div>
 
         <div class="slide">
-            <h2>1단계: 시장 흐름 분석</h2>
-            <p>과거 4년간(2022~2025)의 서울시 부동산 데이터를 분석하여 시장의 거시적 흐름을 파악했습니다.</p>
+            <h2>1. 문제 정의 & 분석 목적</h2>
+            <p>대상자 : 고길동(강원도, 40세)</p>
             <div class="container row" style="flex-direction: row">
                 <div class="col list-box">
-                    <h3>📉 거래량 추이</h3>
-                    <p class="highlight" style="text-align: left;">{{ data.analysis_summary.volume }}</p>
+                    <h3>목적</h3>
+                    <p>서울 내 실거주</p>
+                    <p>예산 10억 원 이하</p>
+                    <p>단순 가격이 아닌 거래 안정성 + 생활 인프라 + 미래 가치 고려</p>
+                    <!-- <p class="highlight" style="text-align: left;">{{ data.analysis_summary.volume }}</p>
                     <div class="clickable-image-area" onclick="openModal('./static/transaction_trend.png')">
                         <img src="./static/transaction_trend.png" alt="">
-                    </div>
+                    </div> -->
                 </div>
                 <div class="col list-box">
-                    <h3>💰 금액 변동 추이</h3>
-                    <p class="highlight" style="text-align: left;">{{ data.analysis_summary.price_change }}</p>
+                    <h3>사용 데이터</h3>
+                    <p>내부 : 서울시 부동산 실거래가(2022~2025)</p>
+                    <p>외부 : 병원, 대형마트, 지하철</p>
+                    <p>뉴스 크롤링 : 치안, 재개발/재건축 이슈</p>
+                    <!-- <p class="highlight" style="text-align: left;">{{ data.analysis_summary.price_change }}</p>
                     <div class="clickable-image-area" onclick="openModal('./static/price_trend.png')">
                         <img src="./static/price_trend.png" alt="">
-                    </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+
+
+        <div class="slide">
+            <h2>2. EDA 결과 요약</h2>
+            <div class="container row" style="flex-direction: row">
+                <div class="col list-box">
+                    <h3>거래량 및 가격 변동에 대한 기초 분석</h3>
+                    <p>전년 대비 거래량 증감률</p>
+                    <p>결과 예시 : </p>
+                    <p>단순 가격이 아닌 거래 안정성 + 생활 인프라 + 미래 가치 고려</p>
+                    <!-- <p class="highlight" style="text-align: left;">{{ data.analysis_summary.volume }}</p>
+                    <div class="clickable-image-area" onclick="openModal('./static/transaction_trend.png')">
+                        <img src="./static/transaction_trend.png" alt="">
+                    </div> -->
+                </div>
+                <div class="col list-box">
+                    <h3>사용 데이터</h3>
+                    <p>내부 : 서울시 부동산 실거래가(2022~2025)</p>
+                    <p>외부 : 병원, 대형마트, 지하철</p>
+                    <p>뉴스 크롤링 : 치안, 재개발/재건축 이슈</p>
+                    <!-- <p class="highlight" style="text-align: left;">{{ data.analysis_summary.price_change }}</p>
+                    <div class="clickable-image-area" onclick="openModal('./static/price_trend.png')">
+                        <img src="./static/price_trend.png" alt="">
+                    </div> -->
                 </div>
             </div>
             <p>
@@ -366,6 +399,8 @@
                 </a>
             </p>
         </div>
+
+
 
         <div class="slide">
             <h2>2단계: 예산 기준 후보지 선정</h2>
