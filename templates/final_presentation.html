@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>12/22 산출물 발표</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
     <style>
         /* 1. 기본 설정 */
         :root {
@@ -309,20 +307,94 @@
             cursor: pointer;
         }
     </style>
+    <style>
+        .dashboard {
+            width: 1000px;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .header h1 {
+            color: #2D3E50;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        .process-container {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+        }
+        /* 프로세스 잇는 중앙 선 */
+        .process-container::before {
+            content: '';
+            position: absolute;
+            top: 45px;
+            left: 50px;
+            right: 50px;
+            height: 4px;
+            background-color: #D1E3FF;
+            z-index: 1;
+        }
+        .step {
+            z-index: 2;
+            text-align: center;
+            width: 15%;
+        }
+        .circle {
+            width: 90px;
+            height: 90px;
+            background-color: #FFFFFF;
+            border: 4px solid #8ECAE6;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            color: #023E8A;
+            transition: all 0.3s ease;
+        }
+        .step:hover .circle {
+            background-color: #8ECAE6;
+            color: white;
+            transform: translateY(-5px);
+        }
+        .label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #4A5568;
+            line-height: 1.4;
+            word-break: keep-all;
+        }
+        .budget-highlight {
+            background-color: #E0FBFC;
+            padding: 15px;
+            border-radius: 12px;
+            margin-top: 40px;
+            border-left: 5px solid #00B4D8;
+            font-size: 15px;
+            color: #333;
+        }
+    </style>
 </head>
 
 <body>
 
     <div class="slide-container">
-        <div class="slide active">
+        <div class="slide">
             <div style="display: flex; align-items: center; gap: 20px;">
                 <div style="display: flex; flex-direction: column; justify-content: center; padding-left: 12px;">
-                    <h1 style="text-align: left;">강원도 토박이 길동이의<br/>서울 거주지 찾기</h1>
+                    <h1 style="text-align: left;">강원도 토박이 길동이의<br>서울 거주지 찾기</h1>
                     <p style="font-size: 1.5em; margin: 0; color: #666; text-align: left; margin-bottom: 70px;">
                     생활 인프라·뉴스 데이터를 활용한 추천 분석
                     </p>
                 </div>
-            <img src="./static/gildong_house.png" alt="" width="330" >
+            <img src="./static/gildong_house.png" alt="" width="330">
             </div>
             <div class="list-box" style="display: inline-block; padding: 30px 120px;">
                 <p style="margin: 0; text-align: center;"><strong>발표자:</strong> 정가연</p>
@@ -335,20 +407,20 @@
             <h2>조원 소개 및 업무 분장</h2>
             <div class="container row" style="flex-direction: row">
                 <table>
-                    <tr><th>이성희(조장)<br/><b>Project Manager</b></th><td>부동산 데이터 수집(웹 크롤링) 및 분석 / 발표자료 제작(Flask) 및 기획 발표</td></tr>
-                    <tr><th>전진우<br/><b>Project Leader</b></th><td>부동산 데이터 수집(웹 크롤링) 및 분석 / 데이터 취합하여 정밀 분석</td></tr>
+                    <tbody><tr><th>이성희(조장)<br><b>Project Manager</b></th><td>부동산 데이터 수집(웹 크롤링) 및 분석 / 발표자료 제작(Flask) 및 기획 발표</td></tr>
+                    <tr><th>전진우<br><b>Project Leader</b></th><td>부동산 데이터 수집(웹 크롤링) 및 분석 / 데이터 취합하여 정밀 분석</td></tr>
                     <tr><th>정가연</th><td>부동산 데이터 수집(공공 데이터) 및 분석 / 공공데이터 정제 및 분석 / 발표자료 제작(Flask) 및 최종 발표</td></tr>
                     <tr><th>정진규</th><td>부동산 데이터 수집(공공 데이터) 및 분석 / 공공데이터 정제 및 분석</td></tr>
-                </table>
+                </tbody></table>
             </div>
         </div>
 
         <div class="slide">
             <div style="display: flex; align-items: center; gap: 20px;">
-                <img src="./static/gildong.png" alt="" width="160" >
+                <img src="./static/gildong.png" alt="" width="160">
 
                 <div style="display: flex; flex-direction: column; justify-content: center; padding-left: 30px;">
-                    <h2 style="margin: 0 0 8px 0;">1. 문제 정의 & 분석 목적</h2>
+                    <h2 style="margin: 0 0 8px 0;">1. 문제 정의 &amp; 분석 목적</h2>
                     <p style="margin: 0;">대상자 : 고길동(강원도, 40세)</p>
                 </div>
             </div>    
@@ -373,10 +445,10 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <tr><td>강남·마용성은 인지상 우수하나 가격 장벽 존재</td></tr>
+                            </tr><tr><td>강남·마용성은 인지상 우수하나 가격 장벽 존재</td></tr>
                             <tr><td>“완성된 인프라”보다 “완성 단계 진입 지역” 탐색 필요</td></tr>
                             <tr><td></td></tr>
-                        </tr>
+                        
                     </tbody>
                 </table>
             </div>        
@@ -420,141 +492,109 @@
         </div>
 
         <div class="slide">
-            <h2>1단계: 시장 흐름 분석</h2>
-            <p>과거 4년간(2022~2025)의 서울시 부동산 데이터를 분석하여 시장의 거시적 흐름을 파악했습니다.</p>
-            <div class="container row" style="flex-direction: row">
-                <div class="col list-box">
-                    <h3>📉 거래량 추이</h3>
-                    <p class="highlight" style="text-align: left;">{{ data.analysis_summary.volume }}</p>
-                    <div class="clickable-image-area" onclick="openModal('./static/transaction_trend.png')">
-                        <img src="./static/transaction_trend.png" alt="">
-                    </div>
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <div style="display: flex; flex-direction: column; justify-content: center; padding-left: 30px;">
+                    <h2 style="margin: 0 0 40px 0;">사용한 데이터</h2>
                 </div>
-                <div class="col list-box">
-                    <h3>💰 금액 변동 추이</h3>
-                    <p class="highlight" style="text-align: left;">{{ data.analysis_summary.price_change }}</p>
-                    <div class="clickable-image-area" onclick="openModal('./static/price_trend.png')">
-                        <img src="./static/price_trend.png" alt="">
-                    </div>
-                </div>
-            </div>
-            <p>
-                <a href="https://docs.google.com/spreadsheets/d/1BneOX7e7S0o8liP7rgFeNgll0_p2sAzA-xS1twt3yHM/edit?gid=0#gid=0" target="_blank" style="color:var(--primary-color); font-style: italic;">
-                    현재 수집중인 데이터
-                </a>
-            </p>
-        </div>
-
-        <div class="slide">
-            <h2>2. EDA 결과 요약</h2>
-            <div class="container row" style="flex-direction: row">
-                <div class="col list-box">
-                    <h3>거래량 및 가격 변동에 대한 기초 분석</h3>
-                    <p>전년 대비 거래량 증감률</p>
-                    <p>결과 예시 : </p>
-                    <p>단순 가격이 아닌 거래 안정성 + 생활 인프라 + 미래 가치 고려</p>
-                    <!-- <p class="highlight" style="text-align: left;">{{ data.analysis_summary.volume }}</p>
-                    <div class="clickable-image-area" onclick="openModal('./static/transaction_trend.png')">
-                        <img src="./static/transaction_trend.png" alt="">
-                    </div> -->
-                </div>
-                <div class="col list-box">
-                    <h3>사용 데이터</h3>
-                    <p>내부 : 서울시 부동산 실거래가(2022~2025)</p>
-                    <p>외부 : 병원, 대형마트, 지하철</p>
-                    <p>뉴스 크롤링 : 치안, 재개발/재건축 이슈</p>
-                    <!-- <p class="highlight" style="text-align: left;">{{ data.analysis_summary.price_change }}</p>
-                    <div class="clickable-image-area" onclick="openModal('./static/price_trend.png')">
-                        <img src="./static/price_trend.png" alt="">
-                    </div> -->
-                </div>
-            </div>
-            <p>
-                <a href="https://docs.google.com/spreadsheets/d/1BneOX7e7S0o8liP7rgFeNgll0_p2sAzA-xS1twt3yHM/edit?gid=0#gid=0" target="_blank" style="color:var(--primary-color); font-style: italic;">
-                    현재 수집중인 데이터
-                </a>
-            </p>
-        </div>
-
-
-
-        <div class="slide">
-            <h2>2단계: 예산 기준 후보지 선정</h2>
-            <div class="budget-badge">예산: 10억원 미만</div>
-            <div class="container">
-                <p>시장 안정화 시기, 예산 범위 내 진입 가능한 유망 지역 3곳을 도출했습니다.</p>
+            </div>    
+            <div class="container" style="display: flex; flex-direction: row; justify-content: center; padding-left: 30px;">
                 <table>
                     <thead>
                         <tr>
-                            <th width="25%">지역구</th>
-                            <th width="25%">평균 실거래가</th>
-                            <th width="50%">선정 이유</th>
+                            <th width="50%" colspan="2">내부 데이터</th>
+
                         </tr>
                     </thead>
                     <tbody>
-                        {% for region in data.candidate_regions %}
-                        <tr>
-                            <td><strong>{{ region.gu }}</strong></td>
-                            <td class="highlight">{{ region.avg_price }}</td>
-                            <td>{{ region.note }}</td>
-                        </tr>
-                        {% endfor %}
+                        <tr><td rowspan="5">서울시 부동산<br>실거래가 정보<br>(2022~2025)</td></tr>
+                        <tr><td style="width: 55%; border-left: 1px solid #eee;">거래일자</td></tr>
+                        <tr><td style="width: 55%; border-left: 1px solid #eee;">자치구 / 동</td></tr>
+                        <tr><td style="width: 55%; border-left: 1px solid #eee;">거래금액</td></tr>
+                        <tr><td style="width: 55%; border-left: 1px solid #eee;">거래유형</td></tr>
                     </tbody>
                 </table>
-            </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th width="50%" colspan="2">외부 데이터</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            </tr><tr><td rowspan="4">생활 인프라 데이터</td></tr>
+                            <tr><td style="width: 55%; border-left: 1px solid #eee;">병원</td></tr>
+                            <tr><td style="width: 55%; border-left: 1px solid #eee;">대형마트</td></tr>
+                            <tr><td style="width: 55%; border-left: 1px solid #eee;">지하철역</td></tr>
+                        
+                        <tr>
+                            </tr><tr><td rowspan="3">뉴스 크롤링 데이터</td></tr>
+                            <tr><td style="width: 55%; border-left: 1px solid #eee;">치안 관련 기사</td></tr>
+                            <tr><td style="width: 55%; border-left: 1px solid #eee;">재개발/재건축 이슈</td></tr>
+                        
+                    </tbody>
+                </table>
+            </div>        
         </div>
 
-        <div class="slide">
-            <h2>3단계: 생활 인프라 및 가치 검증</h2>
-            <p>후보지의 실제 삶의 질(Quality of Life)과 미래 가치를 결정하는 외부 요인을 분석합니다.</p>
-            <div class="container row">
-                <div class="col list-box">
-                    <h3>🏥 생활 인프라 (편의성)</h3>
-                    <ul>
-                        <li><strong>교통:</strong> 지하철역 도보 접근성 및 강남 접근성</li>
-                        <li><strong>의료/편의:</strong> 종합병원, 대형마트 데이터</li>
-                    </ul>
+        <div class="slide active">
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <div style="display: flex; flex-direction: column; justify-content: center; padding-left: 30px;">
+                    <h2 style="margin: 0 0 60px 0;">분석 프로세스</h2>
                 </div>
-                <div class="col list-box">
-                    <h3>📰 뉴스/소셜 데이터 (가치)</h3>
-                    <ul>
-                        <li><strong>개발 호재:</strong> 재개발/재건축 키워드 언급량</li>
-                        <li><strong>안전/환경:</strong> 치안 관련 기사 및 주거 환경 긍정/부정 분석</li>
-                    </ul>
+            </div>    
+            <div class="container" style="display: flex; flex-direction: row; justify-content: center; padding-left: 30px;">
+
+                <div class="dashboard">
+                    <div class="header">
+                        <h1>서울시 거주지 선정을 위한 데이터 분석 프로세스</h1>
+                        <p style="color: #718096;">데이터 기반 내 집 마련 프로젝트 (길동씨의 여정)</p>
+                    </div>
+
+                    <div class="process-container">
+                        <div class="step">
+                            <div class="circle">01</div>
+                            <div class="label">실거래가<br>데이터 전처리</div>
+                        </div>
+                        <div class="step">
+                            <div class="circle">02</div>
+                            <div class="label">연도별 거래량<br>변화 분석</div>
+                        </div>
+                        <div class="step">
+                            <div class="circle">03</div>
+                            <div class="label">연도별 거래금액<br>변화 분석</div>
+                        </div>
+                        <div class="step">
+                            <div class="circle">04</div>
+                            <div class="label">10억 예산<br>후보지 필터링</div>
+                        </div>
+                        <div class="step">
+                            <div class="circle">05</div>
+                            <div class="label">외부 데이터<br>결합 분석</div>
+                        </div>
+                        <div class="step">
+                            <div class="circle">06</div>
+                            <div class="label">최종 거주<br>후보지 선정</div>
+                        </div>
+                    </div>
+
+                    <div class="budget-highlight">
+                        <strong>💡 핵심 분석 요약:</strong> 2022년부터 2025년까지의 추이를 반영하여 거래가 활발하고 가격 안정성이 높은 10억 미만의 후보 지역 3곳(성북,강동,노원)을 심층 분석합니다.
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="slide">
-            <h2>최종 제안</h2>
-            <p>예산의 적절성, 실거주 편의성, 그리고 미래 자산 가치 상승 여력을 종합적으로 고려한 최종 선택입니다.</p>
-
-            <div class="container final-box" style="padding: 50px; border-radius: 15px;">
-                <span
-                    style="background: var(--primary-color); color: #fff; padding: 5px 15px; border-radius: 4px; font-size: 1.1em;">BEST
-                    CHOICE</span>
-                <div class="final-title">
-                    {{ data.final_decision.gu }} <span style="font-weight: 300;">{{ data.final_decision.dong }}</span>
-                </div>
-                <p style="font-size: 1.4em; color: #444;">
-                    {{ data.final_decision.reason }}
-                </p>
-            </div>
-
-            <p style="margin-top: 50px; font-size: 1em; color: #999;">감사합니다. Q&A</p>
+            </div>        
         </div>
     </div>
 
     <div class="page-indicator">
-        <span id="current-page">1</span> / <span id="total-pages">5</span>
+        <span id="current-page">1</span> / <span id="total-pages">1</span>
     </div>
     <div class="controls">
-        <button class="btn-nav" id="prev-btn" onclick="changeSlide(-1)">&#10094;</button>
-        <button class="btn-nav" id="next-btn" onclick="changeSlide(1)">&#10095;</button>
+        <button class="btn-nav" id="prev-btn" onclick="changeSlide(-1)">❮</button>
+        <button class="btn-nav" id="next-btn" onclick="changeSlide(1)" disabled="">❯</button>
     </div>
 
     <div id="imageModal" class="modal" onclick="closeModal(event)">
-        <span class="modal-close" onclick="closeModal()"> &times; </span>
+        <span class="modal-close" onclick="closeModal()"> × </span>
         <img class="modal-content" id="modalImage">
     </div>
 
@@ -626,5 +666,4 @@
     </script>
 
 </body>
-
 </html>
