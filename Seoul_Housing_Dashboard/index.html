@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>부동산 데이터 분석 최종 리포트</title>
+    <style>
+        :root { --main-bg: #f2f7ff; --point-blue: #3182f6; --white: #ffffff; --text-gray: #475569; }
+        body { font-family: 'Pretendard', sans-serif; background-color: var(--main-bg); margin: 0; padding: 30px; color: #1e293b; }
+        .container { max-width: 1500px; margin: 0 auto; }
+        
+        /* 헤더 섹션 */
+        .header { background: var(--white); padding: 25px; border-radius: 15px; text-align: center; border: 1px solid #d1e3ff; margin-bottom: 25px; }
+        .header img { width: 280px; border-radius: 50%; margin-bottom: 15px; }
+        .header h1 { margin: 0; font-size: 26px; color: #0f172a; }
+
+        /* 프로세스 네비게이션 */
+        .nav-bar { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 30px; }
+        .nav-item { 
+            flex: 1; padding: 18px; background: #e2e8f0; border-radius: 12px; text-align: center; 
+            cursor: pointer; font-weight: bold; transition: 0.3s; color: var(--text-gray);
+        }
+        .nav-item.active { background: var(--point-blue); color: white; transform: scale(1.02); }
+
+        /* 메인 디스플레이 영역 */
+        .main-content { display: grid; grid-template-columns: 2.8fr 1fr; gap: 20px; }
+        .chart-box { background: var(--white); padding: 30px; border-radius: 20px; border: 1px solid #e2e8f0; min-height: 700px; }
+        .info-box { background: var(--white); padding: 30px; border-radius: 20px; border: 1px solid #e2e8f0; }
+
+        .img-grid { width: 100%; display: flex; flex-direction: column; gap: 20px; }
+        .img-grid img { width: 100%; border-radius: 10px; border: 1px solid #f1f5f9; }
+        
+        /* 텍스트 스타일 */
+        .tag { display: inline-block; padding: 4px 12px; background: #e0f2fe; color: #3182f6; border-radius: 6px; font-weight: 700; margin-bottom: 15px; }
+        h3 { color: var(--point-blue); margin-top: 0; border-bottom: 2px solid #f1f5f9; padding-bottom: 10px; }
+        .analysis-text { line-height: 1.8; font-size: 15px; }
+        .analysis-text ul { padding-left: 20px; }
+        .analysis-text li { margin-bottom: 12px; }
+        .highlight { color: #3182f6; font-weight: 700; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>서울시 거주지 선정을 위한 데이터 분석 대시보드</h1>
+        <p style="color: var(--text-gray); margin: 0;">외부 거주자 관점의 수치 기반 타겟팅 및 시계열 검증</p>
+    </div>
+
+    <div class="nav-bar">
+        <div class="nav-item active" onclick="changeStep(1)">1. 시장 거시 추이</div>
+        <div class="nav-item" onclick="changeStep(2)">2. 자치구 필터링</div>
+        <div class="nav-item" onclick="changeStep(3)">3. 연도별 변동/가설</div>
+        <div class="nav-item" onclick="changeStep(4)">4. 시계열 심화 결론</div>
+    </div>
+
+    <div class="main-content">
+        <div class="chart-box">
+            <h3 id="chart-title">2022-2025 서울시 거래량/실거래가 추이</h3>
+            <div class="img-grid" id="chart-display">
+                <img src="22~25년_거래량_추이.png">
+                <img src="22~25년_실거래가_추이.png">
+            </div>
+        </div>
+
+        <div class="info-box">
+            <span class="tag" id="step-tag">Step 01</span>
+            <h4 id="info-title" style="font-size: 20px; margin-bottom: 20px;">시장 전체 흐름 분석</h4>
+            <div class="analysis-text" id="info-content">
+                <ul>
+                    <li><span class="highlight">2023년 감소 구간:</span> 금리 인상 등으로 인한 급격한 거래 절벽 구간 확인</li>
+                    <li><span class="highlight">2024년 회복세:</span> 거래량과 실거래가가 동반 상승하는 완만한 회복 국면</li>
+                    <li><span class="highlight">2025년 데이터:</span> 현재 수집 시점(1/17) 한계로 인한 수치이므로 전체 안정화 기조로 해석</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function changeStep(step) {
+        const navs = document.querySelectorAll('.nav-item');
+        navs.forEach((nav, idx) => nav.classList.toggle('active', idx === step-1));
+
+        const title = document.getElementById('chart-title');
+        const display = document.getElementById('chart-display');
+        const tag = document.getElementById('step-tag');
+        const infoTitle = document.getElementById('info-title');
+        const content = document.getElementById('info-content');
+
+        if(step === 1) {
+            title.innerText = "2022-2025 서울시 거래량/실거래가 추이";
+            display.innerHTML = '<img src="22~25년_거래량_추이.png"><img src="22~25년_실거래가_추이.png">';
+            tag.innerText = "Step 01";
+            infoTitle.innerText = "시장 전체 흐름 분석";
+            content.innerHTML = "<ul><li>시장 전체의 실거래가와 거래량의 동반 상승 추세 확인</li><li>23년 저점 대비 24년 거래 회복 탄력성 포착</li></ul>";
+        } 
+        else if(step === 2) {
+            title.innerText = "거래량 기반 유망 자치구 타겟팅";
+            display.innerHTML = '<img src="2024년_거래량_추이_지도.png"><img src="2024년_거래량_추이_막대.png">';
+            tag.innerText = "Step 02";
+            infoTitle.innerText = "지역 필터링 전략";
+            content.innerHTML = "<ul><li><span class='highlight'>거래량 중점:</span> 지방 거주자 입장에서 리스크가 적고 수요가 확실한 지역 선정</li><li><span class='highlight'>선정 결과:</span> 송파, 마포, 노원, 강동 등 거래 상위 자치구 도출</li></ul>";
+        }
+        else if(step === 3) {
+            title.innerText = "2023-2024 금액 변동 비교 및 가설";
+            display.innerHTML = '<img src="2023년_금액변동_지도.png"><img src="2024년_금액변동_지도.png">';
+            tag.innerText = "Step 03";
+            infoTitle.innerText = "변동성 및 가설 검증";
+            content.innerHTML = "<ul><li><span class='highlight'>금액 변동:</span> 자치구별 큰 편차는 없었으나, 동남권 및 한강변 반등세 확인</li><li><span class='highlight'>가설 기각:</span> 뉴스(재개발/범죄)와의 단순 상관관계는 낮게 나타남(P값 0)</li><li>심화 분석을 위해 시계열 데이터 분해 진행</li></ul>";
+        }
+        else if(step === 4) {
+            title.innerText = "주요 자치구 시계열 분해 및 최종 결론";
+            display.innerHTML = '<img src="강동구_시계열_분해.png"><img src="노원구_시계열_분해.png"><img src="성북구_시계열_분해.png">';
+            tag.innerText = "Step 04";
+            infoTitle.innerText = "분석 결론 및 제언";
+            content.innerHTML = "<ul><li><span class='highlight'>핵심 발견:</span> 재개발/범죄 지수는 금액을 결정하기보다 상승의 <span class='highlight'>'기울기(가속도)'</span>에 관여함</li><li><span class='highlight'>강동:</span> 지수 상승 시 가격 기울기 급증</li><li><span class='highlight'>성북:</span> 지수와 가격의 완만한 동행 상승 확인</li></ul>";
+        }
+    }
+</script>
+
+</body>
+</html>
