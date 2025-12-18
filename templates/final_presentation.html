@@ -351,71 +351,39 @@
                     <h2 style="margin: 0 0 8px 0;">1. 문제 정의 & 분석 목적</h2>
                     <p style="margin: 0;">대상자 : 고길동(강원도, 40세)</p>
                 </div>
-            </div>
-            <div class="container row" style="flex-direction: row">
-                <div class="col list-box">
-                    <h3>목적</h3>
-                    <p>서울 내 실거주</p>
-                    <p>예산 10억 원 이하</p>
-                    <p>단순 가격이 아닌 거래 안정성 + 생활 인프라 + 미래 가치 고려</p>
-                </div>
-                <div class="col list-box">
-                    <h3>문제의식</h3>
-                    <p>강남·마용성은 인지상 우수하나 가격 장벽 존재</p>
-                    <p>“완성된 인프라”보다 “완성 단계 진입 지역” 탐색 필요</p>
-                </div>
-            </div>
+            </div>    
+            <div class="container" style="display: flex; flex-direction: row; justify-content: center; padding-left: 30px;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th width="50%">목적</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>서울 내 실거주</td></tr>
+                        <tr><td>예산 10억 원 이하</td></tr>
+                        <tr><td>단순 가격이 아닌 거래 안정성 + 생활 인프라 + 미래 가치 고려</td></tr>
+                    </tbody>
+                </table>
+                <table>
+                    <thead>
+                        <tr>
+                            <th width="50%">문제의식</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <tr><td>강남·마용성은 인지상 우수하나 가격 장벽 존재</td></tr>
+                            <tr><td>“완성된 인프라”보다 “완성 단계 진입 지역” 탐색 필요</td></tr>
+                            <tr><td></td></tr>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>        
         </div>
-
-
-        <div class="slide" style="">
-            <h2>1. 문제 정의 & 분석 목적</h2>
-            <!--- <div class="budget-badge">예산: 10억원 미만</div> -->
-            <p>🔑 핵심 컨셉 : “서울 입성의 첫 단계로 합리적인 선택”</p>
-            <div style="display: flex;">
-                <div class="container" style="padding: 16px;">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th width="100%">목적</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>서울 내 실거주 </strong></td>
-                            </tr>
-                            <tr>
-                            <td><strong>예산 10억 원 이하</strong></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="container" style="padding: 16px;">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th width="100%">목적</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>서울 내 실거주 </strong></td>
-                            </tr>
-                            <tr>
-                            <td><strong>예산 10억 원 이하</strong></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-
-
 
         <div class="slide">
             <h2>고길동의 의사결정 프레임</h2>
-            <!--- <div class="budget-badge">예산: 10억원 미만</div> -->
             <div class="container">
                 <p>🔑 핵심 컨셉 : “서울 입성의 첫 단계로 합리적인 선택”</p>
                 <table>
@@ -451,7 +419,31 @@
             </div>
         </div>
 
-
+        <div class="slide">
+            <h2>1단계: 시장 흐름 분석</h2>
+            <p>과거 4년간(2022~2025)의 서울시 부동산 데이터를 분석하여 시장의 거시적 흐름을 파악했습니다.</p>
+            <div class="container row" style="flex-direction: row">
+                <div class="col list-box">
+                    <h3>📉 거래량 추이</h3>
+                    <p class="highlight" style="text-align: left;">{{ data.analysis_summary.volume }}</p>
+                    <div class="clickable-image-area" onclick="openModal('./static/transaction_trend.png')">
+                        <img src="./static/transaction_trend.png" alt="">
+                    </div>
+                </div>
+                <div class="col list-box">
+                    <h3>💰 금액 변동 추이</h3>
+                    <p class="highlight" style="text-align: left;">{{ data.analysis_summary.price_change }}</p>
+                    <div class="clickable-image-area" onclick="openModal('./static/price_trend.png')">
+                        <img src="./static/price_trend.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <p>
+                <a href="https://docs.google.com/spreadsheets/d/1BneOX7e7S0o8liP7rgFeNgll0_p2sAzA-xS1twt3yHM/edit?gid=0#gid=0" target="_blank" style="color:var(--primary-color); font-style: italic;">
+                    현재 수집중인 데이터
+                </a>
+            </p>
+        </div>
 
         <div class="slide">
             <h2>2. EDA 결과 요약</h2>
