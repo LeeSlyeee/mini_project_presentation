@@ -271,6 +271,7 @@
         }
 
         .modal-content {
+            width: 90%;
             margin: auto;
             display: block;
             box-shadow: 0 4px 25px rgba(0, 0, 0, 0.5);
@@ -386,7 +387,7 @@
 <body>
 
     <div class="slide-container">
-        <div class="slide">
+        <div class="slide active">
             <div style="display: flex; align-items: center; gap: 20px;">
                 <div style="display: flex; flex-direction: column; justify-content: center; padding-left: 12px;">
                     <h1 style="text-align: left;">강원도 토박이 길동이의<br>서울 거주지 찾기</h1>
@@ -421,7 +422,7 @@
 
                 <div style="display: flex; flex-direction: column; justify-content: center; padding-left: 30px;">
                     <h2 style="margin: 0 0 8px 0;">1. 문제 정의 &amp; 분석 목적</h2>
-                    <p style="margin: 0;">대상자 : 고길동(강원도, 40세)</p>
+                    <p style="margin: 0;">대상자 : 강길동(강원도, 40세)</p>
                 </div>
             </div>    
             <div class="container" style="display: flex; flex-direction: row; justify-content: center; padding-left: 30px;">
@@ -507,10 +508,9 @@
                     </thead>
                     <tbody>
                         <tr><td rowspan="5">서울시 부동산<br>실거래가 정보<br>(2022~2025)</td></tr>
-                        <tr><td style="width: 55%; border-left: 1px solid #eee;">거래일자</td></tr>
+                        <tr><td style="width: 55%; border-left: 1px solid #eee;">계약일</td></tr>
                         <tr><td style="width: 55%; border-left: 1px solid #eee;">자치구 / 동</td></tr>
                         <tr><td style="width: 55%; border-left: 1px solid #eee;">거래금액</td></tr>
-                        <tr><td style="width: 55%; border-left: 1px solid #eee;">거래유형</td></tr>
                     </tbody>
                 </table>
                 <table>
@@ -520,23 +520,20 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            </tr><tr><td rowspan="4">생활 인프라 데이터</td></tr>
+                            <tr><td rowspan="4">생활 인프라 데이터</td></tr>
                             <tr><td style="width: 55%; border-left: 1px solid #eee;">병원</td></tr>
                             <tr><td style="width: 55%; border-left: 1px solid #eee;">대형마트</td></tr>
                             <tr><td style="width: 55%; border-left: 1px solid #eee;">지하철역</td></tr>
                         
-                        <tr>
-                            </tr><tr><td rowspan="3">뉴스 크롤링 데이터</td></tr>
+                            <tr><td rowspan="3">뉴스 크롤링 데이터</td></tr>
                             <tr><td style="width: 55%; border-left: 1px solid #eee;">치안 관련 기사</td></tr>
                             <tr><td style="width: 55%; border-left: 1px solid #eee;">재개발/재건축 이슈</td></tr>
-                        
                     </tbody>
                 </table>
             </div>        
         </div>
 
-        <div class="slide active">
+        <div class="slide">
             <div style="display: flex; align-items: center; gap: 20px;">
                 <div style="display: flex; flex-direction: column; justify-content: center; padding-left: 30px;">
                     <h2 style="margin: 0 0 60px 0;">분석 프로세스</h2>
@@ -547,42 +544,107 @@
                 <div class="dashboard">
                     <div class="header">
                         <h1>서울시 거주지 선정을 위한 데이터 분석 프로세스</h1>
-                        <p style="color: #718096;">데이터 기반 내 집 마련 프로젝트 (길동씨의 여정)</p>
+                        <p style="color: #718096;">데이터 기반 내 집 마련 프로젝트 (길동이의 여정)</p>
                     </div>
 
                     <div class="process-container">
                         <div class="step">
                             <div class="circle">01</div>
-                            <div class="label">실거래가<br>데이터 전처리</div>
+                            <div class="label">서울시 부동산 실거래가<br>데이터 전처리</div>
                         </div>
                         <div class="step">
                             <div class="circle">02</div>
-                            <div class="label">연도별 거래량<br>변화 분석</div>
+                            <div class="label">연도별 거래량 및<br>금액 변화 탐색</div>
                         </div>
                         <div class="step">
                             <div class="circle">03</div>
-                            <div class="label">연도별 거래금액<br>변화 분석</div>
+                            <div class="label">예산에 맞는 후보지 선정을 위한 EDA</div>
                         </div>
                         <div class="step">
                             <div class="circle">04</div>
-                            <div class="label">10억 예산<br>후보지 필터링</div>
-                        </div>
-                        <div class="step">
-                            <div class="circle">05</div>
                             <div class="label">외부 데이터<br>결합 분석</div>
                         </div>
                         <div class="step">
-                            <div class="circle">06</div>
-                            <div class="label">최종 거주<br>후보지 선정</div>
+                            <div class="circle">05</div>
+                            <div class="label">최종 거주지 선정<br>인사이트 도출</div>
                         </div>
                     </div>
 
                     <div class="budget-highlight">
-                        <strong>💡 핵심 분석 요약:</strong> 2022년부터 2025년까지의 추이를 반영하여 거래가 활발하고 가격 안정성이 높은 10억 미만의 후보 지역 3곳(성북,강동,노원)을 심층 분석합니다.
+                        <strong>💡 핵심 분석 요약:</strong> 2022년부터 2025년까지의 추이를 반영하여 거래가 활발하고 가격 안정성이 높은 10억 미만의 후보 지역 3곳(강동,노원,성북)을 심층 분석합니다.
                     </div>
                 </div>
             </div>        
         </div>
+
+        <div class="slide">
+            <h2 style="margin: 0;">[2023년] 하락세의 심화와 시장 냉각</h2>
+            <p>"강남·서초를 포함한 서울 전 지역의 자산 가치 재조정기"</p>
+            <div class="container row" style="flex-direction: row; max-width: none;">
+                <div class="col list-box">
+                    <h3>2023 거래량 추이 막대 그래프</h3>
+                    <p class="highlight" style="text-align: left;"></p>
+                    <div class="clickable-image-area" onclick="openModal('./static/2023년_거래량_추이_막대.png')">
+                        <img src="./static/2023년_거래량_추이_막대.png" alt="">
+                    </div>
+                </div>
+                <div class="col list-box">
+                    <h3>20203 금액변동 막대 그래프</h3>
+                    <p class="highlight" style="text-align: left;"></p>
+                    <div class="clickable-image-area" onclick="openModal('./static/2023년_금액변동_막대.png')">
+                        <img src="./static/2023년_금액변동_막대.png" alt="">
+                    </div>
+                </div>
+            </div>            
+        </div>
+
+        <div class="slide">
+            <h2 style="margin: 0;">[2024년] 선별적 반등과 거래 활성화</h2>
+            <p>"심리 회복에 따른 매수세 유입, 상급지 위주의 차별화된 상승장"</p>
+            <div class="container row" style="flex-direction: row; max-width: none;">
+                <div class="col list-box">
+                    <h3>2024 거래량 추이 막대 그래프</h3>
+                    <p class="highlight" style="text-align: left;"></p>
+                    <div class="clickable-image-area" onclick="openModal('./static/2024년_거래량_추이_막대.png')">
+                        <img src="./static/2024년_거래량_추이_막대.png" alt="">
+                    </div>
+                </div>
+                <div class="col list-box">
+                    <h3>20204 금액변동 막대 그래프</h3>
+                    <p class="highlight" style="text-align: left;"></p>
+                    <div class="clickable-image-area" onclick="openModal('./static/2024년_금액변동_막대.png')">
+                        <img src="./static/2024년_금액변동_막대.png" alt="">
+                    </div>
+                </div>
+            </div>            
+        </div>
+
+        <div class="slide">
+            <h2 style="margin: 0;">[2025년] 데이터 부족에 따른 정확한 분석 불가</h2>
+            <p>"2025년 1월 17일까지의 데이터 밖에 없어서 정확한 데이터 분석이 불가함"</p>
+            <div class="container row" style="flex-direction: row; max-width: none;">
+                <div class="col list-box">
+                    <h3>2025 거래량 추이 막대 그래프</h3>
+                    <p class="highlight" style="text-align: left;"></p>
+                    <div class="clickable-image-area" onclick="openModal('./static/2025년_거래량_추이_막대.png')">
+                        <img src="./static/2025년_거래량_추이_막대.png" alt="">
+                    </div>
+                </div>
+                <div class="col list-box">
+                    <h3>20205 금액변동 막대 그래프</h3>
+                    <p class="highlight" style="text-align: left;"></p>
+                    <div class="clickable-image-area" onclick="openModal('./static/2025년_금액변동_막대.png')">
+                        <img src="./static/2025년_금액변동_막대.png" alt="">
+                    </div>
+                </div>
+            </div>            
+        </div>
+
+        
+
+
+
+
     </div>
 
     <div class="page-indicator">
