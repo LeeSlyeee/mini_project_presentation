@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>12/22 산출물 발표</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&amp;display=swap"
+        rel="stylesheet">
     <style>
         /* 1. 기본 설정 */
         :root {
@@ -326,22 +328,26 @@
             background: white;
             padding: 30px;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
         }
+
         .header {
             text-align: center;
             margin-bottom: 40px;
         }
+
         .header h1 {
             color: #2D3E50;
             font-size: 28px;
             margin-bottom: 10px;
         }
+
         .process-container {
             display: flex;
             justify-content: space-between;
             position: relative;
         }
+
         /* 프로세스 잇는 중앙 선 */
         .process-container::before {
             content: '';
@@ -353,11 +359,13 @@
             background-color: #D1E3FF;
             z-index: 1;
         }
+
         .step {
             z-index: 2;
             text-align: center;
             width: 15%;
         }
+
         .circle {
             width: 90px;
             height: 90px;
@@ -372,11 +380,13 @@
             color: #023E8A;
             transition: all 0.3s ease;
         }
+
         .step:hover .circle {
             background-color: #8ECAE6;
             color: white;
             transform: translateY(-5px);
         }
+
         .label {
             font-size: 1.2rem;
             font-weight: 600;
@@ -384,6 +394,7 @@
             line-height: 1.4;
             word-break: keep-all;
         }
+
         .budget-highlight {
             background-color: #E0FBFC;
             padding: 15px;
@@ -395,6 +406,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <div class="slide-container">
@@ -403,10 +415,10 @@
                 <div style="display: flex; flex-direction: column; justify-content: center; padding-left: 12px;">
                     <h1 style="text-align: left;">강원도 토박이 길동이의<br>서울 거주지 찾기</h1>
                     <p style="font-size: 1.5em; margin: 0; color: #666; text-align: left; margin-bottom: 70px;">
-                    생활 인프라·뉴스 데이터를 활용한 추천 분석
+                        생활 인프라·뉴스 데이터를 활용한 추천 분석
                     </p>
                 </div>
-            <img src="./static/gildong_house.png" alt="" width="330">
+                <img src="./static/gildong_house.png" alt="" width="330">
             </div>
             <div class="list-box" style="display: inline-block; padding: 30px 120px;">
                 <p style="margin: 0; text-align: center;"><strong>발표자:</strong> 정가연</p>
@@ -419,11 +431,25 @@
             <h2>조원 소개 및 업무 분장</h2>
             <div class="container row" style="flex-direction: row">
                 <table>
-                    <tbody><tr><th>이성희(조장)<br><b>Project Manager</b></th><td>부동산 데이터 수집(웹 크롤링) 및 분석 / 발표자료 제작(Flask) 및 기획 발표</td></tr>
-                    <tr><th>전진우<br><b>Project Leader</b></th><td>부동산 데이터 수집(웹 크롤링) 및 분석 / 데이터 취합하여 정밀 분석</td></tr>
-                    <tr><th>정가연</th><td>부동산 데이터 수집(공공 데이터) 및 분석 / 공공데이터 정제 및 분석 / 발표자료 제작(Flask) 및 최종 발표</td></tr>
-                    <tr><th>정진규</th><td>부동산 데이터 수집(공공 데이터) 및 분석 / 공공데이터 정제 및 분석</td></tr>
-                </tbody></table>
+                    <tbody>
+                        <tr>
+                            <th>이성희(조장)<br><b>Project Manager</b></th>
+                            <td>부동산 데이터 수집(웹 크롤링) 및 분석 / 발표자료 제작(Flask) 및 기획 발표</td>
+                        </tr>
+                        <tr>
+                            <th>전진우<br><b>Project Leader</b></th>
+                            <td>부동산 데이터 수집(웹 크롤링) 및 분석 / 데이터 취합하여 정밀 분석</td>
+                        </tr>
+                        <tr>
+                            <th>정가연</th>
+                            <td>부동산 데이터 수집(공공 데이터) 및 분석 / 공공데이터 정제 및 분석 / 발표자료 제작(Flask) 및 최종 발표</td>
+                        </tr>
+                        <tr>
+                            <th>정진규</th>
+                            <td>부동산 데이터 수집(공공 데이터) 및 분석 / 공공데이터 정제 및 분석</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
 
@@ -435,8 +461,9 @@
                     <h2 style="margin: 0 0 8px 0;">1. 문제 정의 &amp; 분석 목적</h2>
                     <p style="margin: 0;">대상자 : 강길동(강원도, 40세)</p>
                 </div>
-            </div>    
-            <div class="container" style="display: flex; flex-direction: row; justify-content: center; padding-left: 30px;">
+            </div>
+            <div class="container"
+                style="display: flex; flex-direction: row; justify-content: center; padding-left: 30px;">
                 <table>
                     <thead>
                         <tr>
@@ -444,9 +471,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr><td>서울 내 실거주</td></tr>
-                        <tr><td>예산 10억 원 이하</td></tr>
-                        <tr><td>단순 가격이 아닌 거래 안정성 + 생활 인프라 + 미래 가치 고려</td></tr>
+                        <tr>
+                            <td>서울 내 실거주</td>
+                        </tr>
+                        <tr>
+                            <td>예산 10억 원 이하</td>
+                        </tr>
+                        <tr>
+                            <td>단순 가격이 아닌 거래 안정성 + 생활 인프라 + 미래 가치 고려</td>
+                        </tr>
                     </tbody>
                 </table>
                 <table>
@@ -457,19 +490,21 @@
                     </thead>
                     <tbody>
                         <tr>
-                            </tr><tr><td>강남·마용성은 인지상 우수하나 가격 장벽 존재</td></tr>
-                            <tr><td>“완성된 인프라”보다 “완성 단계 진입 지역” 탐색 필요</td></tr>
-                            <tr><td></td></tr>
-                        
+                        </tr>
+                        <tr>
+                            <td>강남·마용성은 인지상 우수하나 가격 장벽 존재</td>
+                        </tr>
+                        <tr>
+                            <td>“완성된 인프라”보다 “완성 단계 진입 지역” 탐색 필요</td>
+                        </tr>
                     </tbody>
                 </table>
-            </div>        
+            </div>
         </div>
 
         <div class="slide">
-            <h2>고길동의 의사결정 프레임</h2>
+            <h2>강길동의 의사결정 프레임</h2>
             <div class="container">
-                <p>🔑 핵심 컨셉 : “서울 입성의 첫 단계로 합리적인 선택”</p>
                 <table>
                     <thead>
                         <tr>
@@ -500,6 +535,8 @@
                         </tr>
                     </tbody>
                 </table>
+
+                <p><strong>🔑 핵심 컨셉 : “서울 입성의 첫 단계로 합리적인 선택”</strong></p>
             </div>
         </div>
 
@@ -508,8 +545,9 @@
                 <div style="display: flex; flex-direction: column; justify-content: center; padding-left: 30px;">
                     <h2 style="margin: 0 0 40px 0;">사용한 데이터</h2>
                 </div>
-            </div>    
-            <div class="container" style="display: flex; flex-direction: row; justify-content: center; padding-left: 30px;">
+            </div>
+            <div class="container"
+                style="display: flex; flex-direction: row; justify-content: center; padding-left: 30px;">
                 <table>
                     <thead>
                         <tr>
@@ -518,10 +556,18 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr><td rowspan="5">서울시 부동산<br>실거래가 정보<br>(2022~2025)</td></tr>
-                        <tr><td style="width: 55%; border-left: 1px solid #eee;">계약일</td></tr>
-                        <tr><td style="width: 55%; border-left: 1px solid #eee;">자치구 / 동</td></tr>
-                        <tr><td style="width: 55%; border-left: 1px solid #eee;">거래금액</td></tr>
+                        <tr>
+                            <td rowspan="5">서울시 부동산<br>실거래가 정보<br>(2022~2025)</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 55%; border-left: 1px solid #eee;">계약일</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 55%; border-left: 1px solid #eee;">자치구 / 동</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 55%; border-left: 1px solid #eee;">거래금액</td>
+                        </tr>
                     </tbody>
                 </table>
                 <table>
@@ -531,17 +577,31 @@
                         </tr>
                     </thead>
                     <tbody>
-                            <tr><td rowspan="4">생활 인프라 데이터</td></tr>
-                            <tr><td style="width: 55%; border-left: 1px solid #eee;">병원</td></tr>
-                            <tr><td style="width: 55%; border-left: 1px solid #eee;">대형마트</td></tr>
-                            <tr><td style="width: 55%; border-left: 1px solid #eee;">지하철역</td></tr>
-                        
-                            <tr><td rowspan="3">뉴스 크롤링 데이터</td></tr>
-                            <tr><td style="width: 55%; border-left: 1px solid #eee;">치안 관련 기사</td></tr>
-                            <tr><td style="width: 55%; border-left: 1px solid #eee;">재개발/재건축 이슈</td></tr>
+                        <tr>
+                            <td rowspan="4">생활 인프라 데이터</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 55%; border-left: 1px solid #eee;">병원</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 55%; border-left: 1px solid #eee;">대형마트</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 55%; border-left: 1px solid #eee;">지하철역</td>
+                        </tr>
+
+                        <tr>
+                            <td rowspan="3">뉴스 크롤링 데이터</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 55%; border-left: 1px solid #eee;">치안 관련 기사</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 55%; border-left: 1px solid #eee;">재개발/재건축 이슈</td>
+                        </tr>
                     </tbody>
                 </table>
-            </div>        
+            </div>
         </div>
 
         <div class="slide">
@@ -549,8 +609,9 @@
                 <div style="display: flex; flex-direction: column; justify-content: center; padding-left: 30px;">
                     <h2 style="margin: 0 0 60px 0;">분석 프로세스</h2>
                 </div>
-            </div>    
-            <div class="container" style="display: flex; flex-direction: row; justify-content: center; padding-left: 30px;">
+            </div>
+            <div class="container"
+                style="display: flex; flex-direction: row; justify-content: center; padding-left: 30px;">
 
                 <div class="dashboard">
                     <div class="header">
@@ -581,11 +642,9 @@
                         </div>
                     </div>
 
-                    <div class="budget-highlight">
-                        <strong>💡 핵심 분석 요약</strong> : 강동·노원·성북: 거래·가격 안정성 기반 10억 이하 후보지 심층 분석
-                    </div>
+
                 </div>
-            </div>        
+            </div>
         </div>
 
         <div class="slide">
@@ -606,7 +665,7 @@
                         <img src="./static/2023년_금액변동_막대.png" alt="">
                     </div>
                 </div>
-            </div>            
+            </div>
         </div>
 
         <div class="slide">
@@ -627,7 +686,7 @@
                         <img src="./static/2024년_금액변동_막대.png" alt="">
                     </div>
                 </div>
-            </div>            
+            </div>
         </div>
 
         <div class="slide">
@@ -648,10 +707,10 @@
                         <img src="./static/2025년_금액변동_막대.png" alt="">
                     </div>
                 </div>
-            </div>            
+            </div>
         </div>
 
-  
+
         <div class="slide">
             <h2>자치구 선정</h2>
             <p>앞의 데이터 분석을 토대로 3개의 자치구를 선정합니다.</p>
@@ -712,25 +771,25 @@
                 <div class="col list-box" style="max-width: 33.3%;">
                     <h3>강동구 시계열 데이터 분해</h3>
                     <p class="highlight" style="text-align: left;"></p>
-                    <div class="clickable-image-area" onclick="openModal('./static/강동구_시계열_분해.png')">
-                        <img src="./static/강동구_시계열_분해.png" alt="" style="max-width: 100%;">
+                    <div class="clickable-image-area" onclick="openModal('./static/강동구 시계열 분해.png')">
+                        <img src="./static/강동구 시계열 분해.png" alt="" style="max-width: 100%;">
                     </div>
                 </div>
                 <div class="col list-box" style="max-width: 33.3%;">
                     <h3>노원구 시계열 데이터 분해</h3>
                     <p class="highlight" style="text-align: left;"></p>
-                    <div class="clickable-image-area" onclick="openModal('./static/노원구_시계열_분해.png')">
-                        <img src="./static/노원구_시계열_분해.png" alt="" style="max-width: 100%;">
+                    <div class="clickable-image-area" onclick="openModal('./static/노원구 시계열 분해.png')">
+                        <img src="./static/노원구 시계열 분해.png" alt="" style="max-width: 100%;">
                     </div>
                 </div>
                 <div class="col list-box" style="max-width: 33.3%;">
                     <h3>성북구 시계열 데이터 분해</h3>
                     <p class="highlight" style="text-align: left;"></p>
-                    <div class="clickable-image-area" onclick="openModal('./static/성북구_시계열_분해.png')">
-                        <img src="./static/성북구_시계열_분해.png" alt="" style="max-width: 100%;">
+                    <div class="clickable-image-area" onclick="openModal('./static/성북구 시계열 분해.png')">
+                        <img src="./static/성북구 시계열 분해.png" alt="" style="max-width: 100%;">
                     </div>
                 </div>
-            </div>            
+            </div>
         </div>
 
         <div class="slide">
@@ -752,7 +811,7 @@
                         <img src="./static/건물용도_인프라의 법정동별 거래량(강동구).png" alt="">
                     </div>
                 </div>
-            </div>            
+            </div>
         </div>
 
 
@@ -775,7 +834,7 @@
                         <img src="./static/건물용도_인프라의 법정동별 거래량(노원구).png" alt="">
                     </div>
                 </div>
-            </div>            
+            </div>
         </div>
 
 
@@ -798,9 +857,10 @@
                         <img src="./static/건물용도_인프라의 법정동별 거래량(성북구).png" alt="">
                     </div>
                 </div>
-            </div>            
+            </div>
 
-            <p onclick="openModal('./static/건물용도별 거래량 인프라lineplot(성북구).png')" style="cursor:pointer; text-decoration : underline;">추가자료</p>
+            <p onclick="openModal('./static/건물용도별 거래량 인프라lineplot(성북구).png')"
+                style="cursor:pointer; text-decoration : underline;">추가자료</p>
         </div>
 
         <div class="slide">
@@ -811,18 +871,20 @@
                 <div class="col list-box">
                     <h3>강동구</h3>
                     <p class="highlight" style="text-align: left;"></p>
-                    <div class="clickable-image-area" style="height: 360px;" onclick="openModal('./static/강동구 동별 한도 박스 그래프.png')">
+                    <div class="clickable-image-area" style="height: 360px;"
+                        onclick="openModal('./static/강동구 동별 한도 박스 그래프.png')">
                         <img src="./static/강동구 동별 한도 박스 그래프.png" alt="">
                     </div>
                 </div>
                 <div class="col list-box">
                     <h3>노원구</h3>
                     <p class="highlight" style="text-align: left;"></p>
-                    <div class="clickable-image-area" style="height: 360px;" onclick="openModal('./static/노원구 동별 한도 박스 그래프.png')">
+                    <div class="clickable-image-area" style="height: 360px;"
+                        onclick="openModal('./static/노원구 동별 한도 박스 그래프.png')">
                         <img src="./static/노원구 동별 한도 박스 그래프.png" alt="">
                     </div>
                 </div>
-            </div>            
+            </div>
         </div>
 
         <div class="slide">
@@ -833,18 +895,20 @@
                 <div class="col list-box">
                     <h3>성북구 1</h3>
                     <p class="highlight" style="text-align: left;"></p>
-                    <div class="clickable-image-area" style="height: 360px;" onclick="openModal('./static/성북구 동별 한도 박스 그래프1.png')">
+                    <div class="clickable-image-area" style="height: 360px;"
+                        onclick="openModal('./static/성북구 동별 한도 박스 그래프1.png')">
                         <img src="./static/성북구 동별 한도 박스 그래프1.png" alt="">
                     </div>
                 </div>
                 <div class="col list-box">
                     <h3>성북구 2</h3>
                     <p class="highlight" style="text-align: left;"></p>
-                    <div class="clickable-image-area" style="height: 360px;" onclick="openModal('./static/성북구 동별 한도 박스 그래프2.png')">
+                    <div class="clickable-image-area" style="height: 360px;"
+                        onclick="openModal('./static/성북구 동별 한도 박스 그래프2.png')">
                         <img src="./static/성북구 동별 한도 박스 그래프2.png" alt="">
                     </div>
                 </div>
-            </div>            
+            </div>
         </div>
 
         <div class="slide">
@@ -855,79 +919,135 @@
                 <div class="col list-box">
                     <h3>성북구 3</h3>
                     <p class="highlight" style="text-align: left;"></p>
-                    <div class="clickable-image-area" style="height: 360px;" onclick="openModal('./static/성북구 동별 한도 박스 그래프3.png')">
+                    <div class="clickable-image-area" style="height: 360px;"
+                        onclick="openModal('./static/성북구 동별 한도 박스 그래프3.png')">
                         <img src="./static/성북구 동별 한도 박스 그래프3.png" alt="">
                     </div>
                 </div>
                 <div class="col list-box">
                     <h3>성북구 4</h3>
                     <p class="highlight" style="text-align: left;"></p>
-                    <div class="clickable-image-area" style="height: 360px;" onclick="openModal('./static/성북구 동별 한도 박스 그래프4.png')">
+                    <div class="clickable-image-area" style="height: 360px;"
+                        onclick="openModal('./static/성북구 동별 한도 박스 그래프4.png')">
                         <img src="./static/성북구 동별 한도 박스 그래프4.png" alt="">
                     </div>
                 </div>
-            </div>            
+            </div>
         </div>
 
 
 
         <div class="slide">
             <h2>생활 인프라 종합 지수 (전체 순위)</h2>
-            <div class="container" style="background: white; padding: 20px; border-radius: 15px; height: 60vh; overflow-y: auto;">
+            <div class="container"
+                style="background: white; padding: 20px; border-radius: 15px; height: 60vh; overflow-y: auto;">
                 <canvas id="infraChart"></canvas>
             </div>
             <div class="budget-highlight">
-                <strong>데이터 인사이트</strong> : 총 22개 법정동 중 "중계동", "장위동", "강일동" 순으로 지수가 높습니다.
+                <strong>결론</strong> : 총 22개 법정동 중 "중계동", "장위동", "강일동" 순으로 지수가 높습니다.
             </div>
         </div>
 
 
         <div class="slide">
             <h2>🛒 생활 편의: 마트 개수 순위</h2>
-            <div class="container" style="background: white; padding: 20px; border-radius: 15px; height: 60vh; overflow-y: auto;">
+            <div class="container"
+                style="background: white; padding: 20px; border-radius: 15px; height: 60vh; overflow-y: auto;">
                 <canvas id="martChart"></canvas>
             </div>
-            <div class="budget-highlight"><strong>인사이트</strong> : 마트 인프라는 천호동, 중계동, 길음동 등 인구 밀집 지역에 집중되어 있습니다.</div>
+            <div class="budget-highlight"><strong>결론</strong> : 마트 인프라는 천호동, 중계동, 길음동 등 인구 밀집 지역에 집중되어 있습니다.</div>
         </div>
 
         <div class="slide">
             <h2>🚇 교통망: 지하철역 개수 순위</h2>
-            <div class="container" style="background: white; padding: 20px; border-radius: 15px; height: 60vh; overflow-y: auto;">
+            <div class="container"
+                style="background: white; padding: 20px; border-radius: 15px; height: 60vh; overflow-y: auto;">
                 <canvas id="subwayChart"></canvas>
             </div>
-            <div class="budget-highlight"><strong>인사이트</strong> : 천호동과 둔촌동이 다중 역세권으로 교통 편의성이 매우 높습니다.</div>
+            <div class="budget-highlight"><strong>결론</strong> : 천호동과 둔촌동이 다중 역세권으로 교통 편의성이 매우 높습니다.</div>
         </div>
 
         <div class="slide">
             <h2>🏥 의료 안심: 병원수 순위</h2>
-            <div class="container" style="background: white; padding: 20px; border-radius: 15px; height: 60vh; overflow-y: auto;">
+            <div class="container"
+                style="background: white; padding: 20px; border-radius: 15px; height: 60vh; overflow-y: auto;">
                 <canvas id="hospitalChart"></canvas>
             </div>
-            <div class="budget-highlight"><strong>인사이트</strong> : 성내동(11개)과 천호동(9개)은 의료 인프라가 매우 풍부한 지역입니다.</div>
+            <div class="budget-highlight"><strong>결론</strong> : 성내동(11개)과 천호동(9개)은 의료 인프라가 매우 풍부한 지역입니다.</div>
         </div>
 
         <div class="slide">
             <h2>🌳 힐링 라이프: 공원 개수 순위</h2>
-            <div class="container" style="background: white; padding: 20px; border-radius: 15px; height: 60vh; overflow-y: auto;">
+            <div class="container"
+                style="background: white; padding: 20px; border-radius: 15px; height: 60vh; overflow-y: auto;">
                 <canvas id="parkChart"></canvas>
             </div>
-            <div class="budget-highlight"><strong>인사이트</strong> : 길음동(11개)과 강일동(9개)은 녹지 비율이 높아 주거 쾌적성이 우수합니다.</div>
+            <div class="budget-highlight"><strong>결론</strong> : 길음동(11개)과 강일동(9개)은 녹지 비율이 높아 주거 쾌적성이 우수합니다.</div>
         </div>
 
         <div class="slide">
             <h2>🎓 교육 환경: 학교 개수 순위</h2>
-            <div class="container" style="background: white; padding: 20px; border-radius: 15px; height: 60vh; overflow-y: auto;">
+            <div class="container"
+                style="background: white; padding: 20px; border-radius: 15px; height: 60vh; overflow-y: auto;">
                 <canvas id="schoolChart"></canvas>
             </div>
-            <div class="budget-highlight"><strong>인사이트</strong> : 중계동(24개)은 타 지역과 비교할 수 없는 압도적인 학군을 보유하고 있습니다.</div>
+            <div class="budget-highlight"><strong>결론</strong> : 중계동(24개)은 타 지역과 비교할 수 없는 압도적인 학군을 보유하고 있습니다.</div>
         </div>
 
         <div class="slide">
             <h2>🚌 대중교통: 버스 정류장 개수 순위</h2>
-            <div class="container" style="background: white; padding: 20px; border-radius: 15px; height: 60vh; overflow-y: auto;">
+            <div class="container"
+                style="background: white; padding: 20px; border-radius: 15px; height: 60vh; overflow-y: auto;">
                 <canvas id="busChart"></canvas>
             </div>
-            <div class="budget-highlight"><strong>인사이트</strong> : 장위동(116개)과 중계동(104개)은 촘촘한 버스망을 확보하고 있습니다.</div>
+            <div class="budget-highlight"><strong>결론</strong> : 장위동(116개)과 중계동(104개)은 촘촘한 버스망을 확보하고 있습니다.</div>
+        </div>
+
+        <div class="slide">
+            <h1>감사합니다.</h1>
+        </div>
+
+        <div class="slide">
+            <h2>출처</h2>
+
+            <div class="container">
+                <table>
+                    <tr>
+                        <th>크롤링 데이터</th>
+                    </tr>
+                    <tr>
+                        <td>범죄 뉴스 : https://news.naver.com/</td>
+                    </tr>
+                    <tr>
+                        <td>재개발 뉴스 : https://www.dosijeongbi.com/sub.html?section=sc2</td>
+                    </tr>
+                </table>
+
+
+                <table>
+                    <tr>
+                        <th>공공 데이터</th>
+                    </tr>
+                    <tr>
+                        <td>마트: https://data.seoul.go.kr/dataList/10128/S/2/datasetView.do</td>
+                    </tr>
+                    <tr>
+                        <td>지하철: https://www.data.go.kr/data/15119348/fileData.do#</td>
+                    </tr>
+                    <tr>
+                        <td>병원: https://data.seoul.go.kr/dataList/OA-16479/S/1/datasetView.do</td>
+                    </tr>
+                    <tr>
+                        <td>공원: https://www.data.go.kr/data/15012890/standard.do</td>
+                    </tr>
+                    <tr>
+                        <td>학교: https://www.data.go.kr/data/15021148/standard.do</td>
+                    </tr>
+                    <tr>
+                        <td>버스: https://www.data.go.kr/data/15067528/fileData.do</td>
+                    </tr>
+                </table>
+            </div>
         </div>
 
 
@@ -948,24 +1068,24 @@
         // 1. 상세 데이터 정의
         const rawDataDetail = {
             "강동구": {
-                "강일동": {"마트": 0, "역": 1, "병원": 0, "공원": 9, "학교": 6, "버스": 82, "합계": 98},
-                "둔촌동": {"마트": 0, "역": 3, "병원": 2, "공원": 1, "학교": 9, "버스": 62, "합계": 77},
-                "명일동": {"마트": 1, "역": 2, "병원": 2, "공원": 0, "학교": 4, "버스": 52, "합계": 61},
-                "성내동": {"마트": 0, "역": 1, "병원": 11, "공원": 0, "학교": 3, "버스": 74, "합계": 89},
-                "암사동": {"마트": 0, "역": 1, "병원": 0, "공원": 1, "학교": 6, "버스": 55, "합계": 63},
-                "천호동": {"마트": 2, "역": 3, "병원": 9, "공원": 0, "학교": 8, "버스": 69, "합계": 91}
+                "강일동": { "마트": 0, "역": 1, "병원": 0, "공원": 9, "학교": 6, "버스": 82, "합계": 98 },
+                "둔촌동": { "마트": 0, "역": 3, "병원": 2, "공원": 1, "학교": 9, "버스": 62, "합계": 77 },
+                "명일동": { "마트": 1, "역": 2, "병원": 2, "공원": 0, "학교": 4, "버스": 52, "합계": 61 },
+                "성내동": { "마트": 0, "역": 1, "병원": 11, "공원": 0, "학교": 3, "버스": 74, "합계": 89 },
+                "암사동": { "마트": 0, "역": 1, "병원": 0, "공원": 1, "학교": 6, "버스": 55, "합계": 63 },
+                "천호동": { "마트": 2, "역": 3, "병원": 9, "공원": 0, "학교": 8, "버스": 69, "합계": 91 }
             },
             "노원구": {
-                "중계동": {"마트": 2, "역": 1, "병원": 1, "공원": 1, "학교": 24, "버스": 104, "합계": 133}
+                "중계동": { "마트": 2, "역": 1, "병원": 1, "공원": 1, "학교": 24, "버스": 104, "합계": 133 }
             },
             "성북구": {
-                "길음동": {"마트": 2, "역": 1, "병원": 1, "공원": 11, "학교": 5, "버스": 48, "합계": 68},
-                "돈암동": {"마트": 0, "역": 0, "병원": 0, "공원": 2, "학교": 9, "버스": 55, "합계": 66},
-                "장위동": {"마트": 0, "역": 0, "병원": 1, "공원": 3, "학교": 7, "버스": 116, "합계": 127},
-                "종암동": {"마트": 0, "역": 1, "병원": 2, "공원": 5, "학교": 5, "버스": 67, "합계": 80},
-                "하월곡동": {"마트": 0, "역": 1, "병원": 3, "공원": 6, "학교": 4, "버스": 57, "합계": 71},
-                "석관동": {"마트": 0, "역": 1, "병원": 0, "공원": 5, "학교": 4, "버스": 33, "합계": 43},
-                "삼선동2가": {"마트": 0, "역": 0, "병원": 0, "공원": 0, "학교": 2, "버스": 13, "합계": 15}
+                "길음동": { "마트": 2, "역": 1, "병원": 1, "공원": 11, "학교": 5, "버스": 48, "합계": 68 },
+                "돈암동": { "마트": 0, "역": 0, "병원": 0, "공원": 2, "학교": 9, "버스": 55, "합계": 66 },
+                "장위동": { "마트": 0, "역": 0, "병원": 1, "공원": 3, "학교": 7, "버스": 116, "합계": 127 },
+                "종암동": { "마트": 0, "역": 1, "병원": 2, "공원": 5, "학교": 5, "버스": 67, "합계": 80 },
+                "하월곡동": { "마트": 0, "역": 1, "병원": 3, "공원": 6, "학교": 4, "버스": 57, "합계": 71 },
+                "석관동": { "마트": 0, "역": 1, "병원": 0, "공원": 5, "학교": 4, "버스": 33, "합계": 43 },
+                "삼선동2가": { "마트": 0, "역": 0, "병원": 0, "공원": 0, "학교": 2, "버스": 13, "합계": 15 }
             }
         };
 
@@ -1015,7 +1135,7 @@
             slides.forEach(s => { s.classList.remove('active'); s.style.display = 'none'; });
             slides[index].classList.add('active');
             slides[index].style.display = 'flex';
-            
+
             currentSlide = index;
             document.getElementById('current-page').textContent = index + 1;
             document.getElementById('prev-btn').disabled = (index === 0);
@@ -1032,7 +1152,7 @@
             if (activeSlide.querySelector('#busChart')) renderChart('busChart', '버스', '버스 정류장 개수', '#34495e');
         }
 
-        function changeSlide(n) { 
+        function changeSlide(n) {
             const nextIdx = currentSlide + n;
             if (nextIdx >= 0 && nextIdx < totalSlides) showSlide(nextIdx);
         }
@@ -1050,10 +1170,11 @@
         document.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowRight') changeSlide(1);
             if (e.key === 'ArrowLeft') changeSlide(-1);
-            if (e.key === 'Escape') closeModal({target:{}});
+            if (e.key === 'Escape') closeModal({ target: {} });
         });
 
         window.onload = () => showSlide(0);
     </script>
 </body>
+
 </html>
